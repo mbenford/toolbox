@@ -1,0 +1,32 @@
+# Compiled source #
+###################
+[Bb]in/
+[Oo]bj/
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Visual Studio Generated Files #
+#################################
+*.user
+*.suo
+
+# dotCover Generated Files #
+############################
+*.DotSettings
+
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
