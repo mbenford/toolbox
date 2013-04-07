@@ -4,6 +4,6 @@ namespace Toolbox.DomainEvents
 {
     public interface IHandlerContainer
     {
-        IEnumerable<IHandlerOf<T>> GetHandlersOf<T>() where T: IDomainEvent;
+        IEnumerable<IHandlerOf<T>> GetHandlersFor<T>() where T: IDomainEvent;
     }
 }
