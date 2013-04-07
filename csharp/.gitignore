@@ -23,6 +23,8 @@
 ############################
 *.DotSettings
 
+# NuGet packages folder #
+packages/
 
 # OS generated files #
 ######################
