@@ -1,7 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainEvents", "DomainEvents\DomainEvents.csproj", "{6930FA0F-7399-427A-B15D-9B19986A22B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainEvents.Test", "DomainEvents.Test\DomainEvents.Test.csproj", "{71F551FA-6CEA-4CD1-A56E-FDF10C90B592}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6930FA0F-7399-427A-B15D-9B19986A22B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6930FA0F-7399-427A-B15D-9B19986A22B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6930FA0F-7399-427A-B15D-9B19986A22B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6930FA0F-7399-427A-B15D-9B19986A22B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71F551FA-6CEA-4CD1-A56E-FDF10C90B592}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71F551FA-6CEA-4CD1-A56E-FDF10C90B592}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71F551FA-6CEA-4CD1-A56E-FDF10C90B592}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71F551FA-6CEA-4CD1-A56E-FDF10C90B592}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
