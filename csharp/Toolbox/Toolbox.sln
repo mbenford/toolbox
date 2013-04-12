@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainEvents", "DomainEvents\DomainEvents.csproj", "{6930FA0F-7399-427A-B15D-9B19986A22B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System", "System\System.csproj", "{7193577A-4360-478B-9084-E31CB41ECA6D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Tests", "System.Tests\System.Tests.csproj", "{AFBF7727-40F4-4BE8-8F5C-A1D454753877}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainEvents.Tests", "DomainEvents.Tests\DomainEvents.Tests.csproj", "{71F551FA-6CEA-4CD1-A56E-FDF10C90B592}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{5F8B1549-3CC9-4FD2-BF17-52029431A117}"
@@ -15,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{5F8B15
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wrappers", "Wrappers\Wrappers.csproj", "{7193577A-4360-478B-9084-E31CB41ECA6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wrappers.Tests", "Wrappers.Tests\Wrappers.Tests.csproj", "{AFBF7727-40F4-4BE8-8F5C-A1D454753877}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +26,10 @@ Global
 		{6930FA0F-7399-427A-B15D-9B19986A22B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6930FA0F-7399-427A-B15D-9B19986A22B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6930FA0F-7399-427A-B15D-9B19986A22B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71F551FA-6CEA-4CD1-A56E-FDF10C90B592}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71F551FA-6CEA-4CD1-A56E-FDF10C90B592}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71F551FA-6CEA-4CD1-A56E-FDF10C90B592}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71F551FA-6CEA-4CD1-A56E-FDF10C90B592}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7193577A-4360-478B-9084-E31CB41ECA6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7193577A-4360-478B-9084-E31CB41ECA6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7193577A-4360-478B-9084-E31CB41ECA6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -34,10 +38,6 @@ Global
 		{AFBF7727-40F4-4BE8-8F5C-A1D454753877}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFBF7727-40F4-4BE8-8F5C-A1D454753877}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFBF7727-40F4-4BE8-8F5C-A1D454753877}.Release|Any CPU.Build.0 = Release|Any CPU
-		{71F551FA-6CEA-4CD1-A56E-FDF10C90B592}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{71F551FA-6CEA-4CD1-A56E-FDF10C90B592}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{71F551FA-6CEA-4CD1-A56E-FDF10C90B592}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{71F551FA-6CEA-4CD1-A56E-FDF10C90B592}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

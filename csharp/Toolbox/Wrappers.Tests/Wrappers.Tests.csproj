@@ -7,8 +7,8 @@
     <ProjectGuid>{AFBF7727-40F4-4BE8-8F5C-A1D454753877}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>System.Tests</RootNamespace>
-    <AssemblyName>System.Tests</AssemblyName>
+    <RootNamespace>Toolbox.Wrappers.Test</RootNamespace>
+    <AssemblyName>Toolbox.Wrappers.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
@@ -49,6 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wrappers\Wrappers.csproj">
+      <Project>{7193577a-4360-478b-9084-e31cb41eca6d}</Project>
+      <Name>Wrappers</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
