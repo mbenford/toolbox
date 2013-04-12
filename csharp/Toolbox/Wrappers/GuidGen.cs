@@ -6,6 +6,11 @@ namespace Toolbox.Wrappers
     {
         private static Func<Guid> newGuid;
 
+        public static Guid Empty
+        {
+            get { return Guid.Empty; }
+        }
+
         public static void LockTo(Guid guid)
         {
             newGuid = () => guid;

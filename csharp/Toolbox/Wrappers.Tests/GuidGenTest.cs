@@ -41,5 +41,14 @@ namespace Toolbox.Wrappers.Test
                 Assert.AreNotEqual(guid, GuidGen.NewGuid());
             }
         }
+
+        public class Generates_An_Empty_Guid
+        {
+            [Test]
+            public void Empty_Should_Return_00000000_0000_0000_0000_000000000000()
+            {
+                Assert.AreEqual(Guid.Empty, GuidGen.Empty);
+            }
+        }
     }
 }
