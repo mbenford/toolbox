@@ -47,8 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DefaultContainerTest.cs" />
     <Compile Include="DomainEventsTest.cs" />
     <Compile Include="DummyEvent.cs" />
+    <Compile Include="DummyHandler1.cs" />
+    <Compile Include="DummyHandler2.cs" />
+    <Compile Include="DummyHandler3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTestingContainerTest.cs" />
   </ItemGroup>

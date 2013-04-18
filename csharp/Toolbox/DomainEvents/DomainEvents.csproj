@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContainerNotProvidedException.cs" />
+    <Compile Include="DefaultContainer.cs" />
     <Compile Include="DomainEvents.cs" />
     <Compile Include="IDomainEvent.cs" />
     <Compile Include="IHandlerContainer.cs" />
