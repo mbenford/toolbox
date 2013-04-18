@@ -14,7 +14,7 @@ namespace Toolbox.DomainEvents
             this.assembly = assembly;
         }
 
-        public IEnumerable<IHandlerOf<T>> GetHandlersFor<T>() where T : IDomainEvent
+        public IEnumerable<IHandlerOf<T>> GetHandlersOf<T>() where T : IDomainEvent
         {         
             return from type in assembly.GetTypes()
                    where typeof(IHandlerOf<T>).IsAssignableFrom(type)

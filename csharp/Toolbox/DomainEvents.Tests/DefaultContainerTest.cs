@@ -21,7 +21,7 @@ namespace Toolbox.DomainEvents.Test
                 var sut = new DefaultContainer(Assembly.GetExecutingAssembly());
 
                 // Act
-                result = sut.GetHandlersFor<DummyEvent>();
+                result = sut.GetHandlersOf<DummyEvent>();
             }
 
             [Test]

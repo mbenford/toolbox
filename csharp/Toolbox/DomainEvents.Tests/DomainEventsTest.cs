@@ -24,7 +24,7 @@ namespace Toolbox.DomainEvents.Test
                 var handlers = new[] {handler1Mock.Object, handler2Mock.Object, handler3Mock.Object};
 
                 containerMock = new Mock<IHandlerContainer>();
-                containerMock.Setup(mock => mock.GetHandlersFor<DummyEvent>())
+                containerMock.Setup(mock => mock.GetHandlersOf<DummyEvent>())
                              .Returns(handlers);
 
                 dummyEvent = new DummyEvent();
