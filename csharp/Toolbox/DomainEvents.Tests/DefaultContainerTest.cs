@@ -55,5 +55,14 @@ namespace Toolbox.DomainEvents.Test
             }
 
         }
+
+        public class Does_Not_Allow_A_Container_With_An_Invalid_Assembly
+        {
+            [Test]
+            public void Throws_ArgumentNullException_When_The_Provided_Assembly_Is_Null()
+            {
+                Assert.Throws<ArgumentNullException>(() => new DefaultContainer(null));
+            }
+        }
     }
 }

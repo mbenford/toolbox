@@ -11,6 +11,8 @@ namespace Toolbox.DomainEvents
 
         public DefaultContainer(Assembly assembly)
         {
+            if (assembly == null) throw new ArgumentNullException("assembly");
+
             this.assembly = assembly;
         }
 
