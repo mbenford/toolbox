@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using Moq;
 using NUnit.Framework;
 
 namespace Toolbox.DomainEvents.Test
@@ -62,6 +64,42 @@ namespace Toolbox.DomainEvents.Test
             public void Throws_ArgumentNullException_When_The_Provided_Assembly_Is_Null()
             {
                 Assert.Throws<ArgumentNullException>(() => new DefaultContainer(null));
+            }
+        }
+
+        public class Caches_The_Loading_Of_Handlers_After_First_Use
+        {
+            private Mock<_Assembly> assemblyMock;
+            private IEnumerable<IHandlerOf<DummyEvent>> result1;
+            private IEnumerable<IHandlerOf<DummyEvent>> result2;
+
+            [TestFixtureSetUp]
+            public void TestFixtureSetUp()
+            {                
+                // Arrange
+                var types = new[] { typeof(DummyHandler1), typeof(DummyHandler2), typeof(DummyHandler3) };
+
+                assemblyMock = new Mock<_Assembly>();
+                assemblyMock.Setup(m => m.GetTypes())
+                            .Returns(types);
+
+                var sut = new DefaultContainer(assemblyMock.Object);
+
+                // Act
+                result1 = sut.GetHandlersOf<DummyEvent>();
+                result2 = sut.GetHandlersOf<DummyEvent>();    
+            }
+
+            [Test]
+            public void Results_Should_Be_The_Same_Reference()
+            {
+                Assert.AreSame(result1, result2);
+            }
+
+            [Test]
+            public void Assembly_GetTypes_Should_Be_Called_Exactly_Once()
+            {
+                assemblyMock.Verify(m => m.GetTypes(), Times.Once());
             }
         }
     }
