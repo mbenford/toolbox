@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -9,7 +10,7 @@ namespace Toolbox.DomainEvents
     public class DefaultContainer : IHandlerContainer
     {
         private readonly _Assembly assembly;
-        private readonly IDictionary<Type, object> cache;
+        private readonly ConcurrentDictionary<Type, object> cache;
 
         public DefaultContainer(Assembly assembly)
             : this(assembly as _Assembly)
@@ -22,24 +23,19 @@ namespace Toolbox.DomainEvents
             if (assembly == null) throw new ArgumentNullException("assembly");
 
             this.assembly = assembly;
-            cache = new Dictionary<Type, object>();
+            cache = new ConcurrentDictionary<Type, object>();
         }
 
         public IEnumerable<IHandlerOf<T>> GetHandlersOf<T>() where T : IDomainEvent
         {
-            IEnumerable<IHandlerOf<T>> handlers;
+            return cache.GetOrAdd(typeof(T), key => LoadHandlersFromAssembly<T>()) as IEnumerable<IHandlerOf<T>>;
+        }
 
-            if (cache.ContainsKey(typeof(T)))
-                handlers = cache[typeof(T)] as IEnumerable<IHandlerOf<T>>;
-            else
-            {
-                handlers = from type in assembly.GetTypes()
-                           where typeof(IHandlerOf<T>).IsAssignableFrom(type)
-                           select Activator.CreateInstance(type) as IHandlerOf<T>;
-                cache.Add(typeof(T), handlers);
-            }
-
-            return handlers;
+        private IEnumerable<IHandlerOf<T>> LoadHandlersFromAssembly<T>() where T: IDomainEvent
+        {
+            return from type in assembly.GetTypes()
+                   where typeof(IHandlerOf<T>).IsAssignableFrom(type)
+                   select Activator.CreateInstance(type) as IHandlerOf<T>;
         }
     }
 }
