@@ -14,7 +14,7 @@ namespace Toolbox.DomainEvents.Test
                 var sut = new UnitTestingContainer();
 
                 // Act
-                IEnumerable<IHandlerOf<DummyEvent>> result = sut.GetHandlersFor<DummyEvent>();
+                IEnumerable<IHandlerOf<DummyEvent>> result = sut.GetHandlersOf<DummyEvent>();
 
                 // Assert
                 Assert.NotNull(result);

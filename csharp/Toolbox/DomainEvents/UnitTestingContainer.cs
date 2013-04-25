@@ -12,7 +12,7 @@ namespace Toolbox.DomainEvents
             handlers = new Dictionary<Type, object>();
         }
 
-        public IEnumerable<IHandlerOf<T>> GetHandlersFor<T>() where T : IDomainEvent
+        public IEnumerable<IHandlerOf<T>> GetHandlersOf<T>() where T : IDomainEvent
         {
             Handler<T> handler = GetHandler<T>();
 

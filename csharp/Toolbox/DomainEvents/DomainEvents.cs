@@ -10,7 +10,7 @@ namespace Toolbox.DomainEvents
         {
             if (Container == null) throw new ContainerNotProvidedException();
 
-            foreach (var handler in Container.GetHandlersFor<T>())
+            foreach (var handler in Container.GetHandlersOf<T>())
             {
                 handler.Handle(domainEvent);
             }
