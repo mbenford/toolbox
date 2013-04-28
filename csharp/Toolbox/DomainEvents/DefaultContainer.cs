@@ -7,11 +7,18 @@ using System.Runtime.InteropServices;
 
 namespace Toolbox.DomainEvents
 {
+    /// <summary>
+    /// Scans an assembly for classes that implement the interface IHandlerOf<T>
+    /// </summary>
     public class DefaultContainer : IHandlerContainer
     {
         private readonly _Assembly assembly;
         private readonly ConcurrentDictionary<Type, object> cache;
 
+        /// <summary>
+        /// Initialzes a new instance of the DefaultContainer class
+        /// </summary>
+        /// <param name="assembly">The assembly to be scanned for event handlers</param>
         public DefaultContainer(Assembly assembly)
             : this(assembly as _Assembly)
         {
@@ -25,7 +32,7 @@ namespace Toolbox.DomainEvents
             this.assembly = assembly;
             cache = new ConcurrentDictionary<Type, object>();
         }
-
+        
         public IEnumerable<IHandlerOf<T>> GetHandlersOf<T>() where T : IDomainEvent
         {
             return cache.GetOrAdd(typeof(T), key => LoadHandlersFromAssembly<T>()) as IEnumerable<IHandlerOf<T>>;
