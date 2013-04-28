@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace Toolbox.DomainEvents
 {
+    /// <summary>
+    /// Fakes event handlers and tracks events invocation
+    /// </summary>
     public class UnitTestingContainer : IHandlerContainer
     {
         private readonly IDictionary<Type, object> handlers;
@@ -11,7 +14,7 @@ namespace Toolbox.DomainEvents
         {
             handlers = new Dictionary<Type, object>();
         }
-
+        
         public IEnumerable<IHandlerOf<T>> GetHandlersOf<T>() where T : IDomainEvent
         {
             Handler<T> handler = GetHandler<T>();
@@ -25,6 +28,11 @@ namespace Toolbox.DomainEvents
             return new[] { handler };
         }
 
+        /// <summary>
+        /// Checks if an event was raised
+        /// </summary>
+        /// <typeparam name="T">Type of the event</typeparam>
+        /// <returns>True if the event was raised; False otherwise</returns>
         public bool WasRaised<T>() where T : IDomainEvent
         {
             var handler = GetHandler<T>();
@@ -42,6 +50,10 @@ namespace Toolbox.DomainEvents
             return handler;
         }
 
+        /// <summary>
+        /// Resets the state of an event
+        /// </summary>
+        /// <typeparam name="T">Type of the event</typeparam>
         public void Reset<T>() where T: IDomainEvent
         {
             var handler = GetHandler<T>();

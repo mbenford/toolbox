@@ -3,26 +3,17 @@ using System.Runtime.Serialization;
 
 namespace Toolbox.DomainEvents
 {
+    /// <summary>
+    /// The exception that is thrown when an event is raised but no event handler container is provided
+    /// </summary>
     public class ContainerNotProvidedException : Exception
     {
+        /// <summary>
+        /// Initializes a new instance of the ContainerNotProvidedException class with a default error message
+        /// </summary>
         public ContainerNotProvidedException()
-            : this("No event handler container was provided")
+            : base("No event handler container was provided")
         {
-        }
-
-        public ContainerNotProvidedException(string message)
-            : base(message)
-        {
-        }
-
-        public ContainerNotProvidedException(string message, Exception innerException)
-            : base(message, innerException)
-        {
-        }
-
-        protected ContainerNotProvidedException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
-        }
+        }       
     }
 }
